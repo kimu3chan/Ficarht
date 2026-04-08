@@ -7,6 +7,7 @@ public class MageLogic : MonoBehaviour
     Animator animator;
     public List<RuntimeAnimatorController> animationList = new List<RuntimeAnimatorController>();
     public Dictionary<string, RuntimeAnimatorController> animationDic = new Dictionary<string, RuntimeAnimatorController>();
+    AnimatorStateInfo stateInfo;
     void Awake()
     {
         animator = GetComponent<Animator>();
@@ -21,9 +22,15 @@ public class MageLogic : MonoBehaviour
     }
     void Update()
     {
+        stateInfo = animator.GetCurrentAnimatorStateInfo(0);
         if (Input.GetMouseButtonDown(0))
         {
             animator.runtimeAnimatorController = animationDic["MageBasicAttack"];
+            animator.SetBool("right", !animator.GetBool("right"));
+        }
+        else if (!Input.anyKey && stateInfo.normalizedTime >= 0.95f)
+        {
+            animator.runtimeAnimatorController = animationDic["MageIdle"];
         }
     }
 }
