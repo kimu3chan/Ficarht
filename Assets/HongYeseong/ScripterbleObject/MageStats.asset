@@ -18,3 +18,4 @@ MonoBehaviour:
   power: 0
   defense: 0
   intelligence: 0
+  speed: 10

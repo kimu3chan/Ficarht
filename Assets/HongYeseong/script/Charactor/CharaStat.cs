@@ -6,8 +6,8 @@ public class CharaStat : MonoBehaviour
 {
     public CharacterStats characterStats; //캐릭터 스탯
     Vector2 inputVector;
-    Vector3 moveVector;
-    Rigidbody CharctorRb;
+    public Vector3 moveVector {get; private set;}
+    private Rigidbody CharctorRb;
     float moveSpeed;
     public enum status // 캐릭터 현재 상태
     {
@@ -25,7 +25,7 @@ public class CharaStat : MonoBehaviour
         Debug.Log(moveSpeed);
         Debug.Log(CharctorRb);
     }
-    void Update() 
+    void FixedUpdate() 
     {
         CharctorRb.linearVelocity = moveVector.normalized * moveSpeed;    
     }
@@ -34,5 +34,6 @@ public class CharaStat : MonoBehaviour
     { 
         inputVector = value.Get<Vector2>();
         moveVector = new Vector3(inputVector.x, 0f, inputVector.y);
+        Debug.Log(moveVector);
     }
 }
