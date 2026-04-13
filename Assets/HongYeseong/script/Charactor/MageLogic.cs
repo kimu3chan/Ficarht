@@ -12,8 +12,7 @@ public class MageLogic : MonoBehaviour
     CharaStat charaStat;
     public List<GameObject> skillList = new List<GameObject>();
     public Dictionary<string, GameObject> skillDic = new Dictionary<string, GameObject>();
-    ParticleSystem[] particles;
-    TrailRenderer[] trails;
+    Animator particles;
     
     void Awake()
     {
@@ -34,8 +33,7 @@ public class MageLogic : MonoBehaviour
             Debug.LogError("animationList is null");
         if(skillList == null)
             Debug.LogError("skiilList is null");
-        particles = skillDic["MageBasicSkill"].GetComponentsInChildren<ParticleSystem>();
-        trails = skillDic["MageBasicSkill"].GetComponentsInChildren<TrailRenderer>();
+        particles = skillDic["MageBasicSkill"].GetComponent<Animator>();
 
     }
     void Update()
@@ -79,29 +77,12 @@ public class MageLogic : MonoBehaviour
 
             skillDic["MageBasicSkill"].transform.position = Vector3.zero;
             skillDic["MageBasicSkill"].SetActive(true);
-            
-            
-            while (true)
-            {
-                if (particles[0].IsAlive() == false)
-                {
-                    skillDic["MageBasicSkill"].SetActive(false);
-                    foreach (var p in particles)
-                    {
-                        p.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
-                        p.Play();
-                    }
-                    foreach (var t in trails)
-                    {
-                        t.enabled = false;
-                        t.enabled = true;
-                    }
-                    break;
-                }
 
-                yield return null;
-            }
             
+            float duration = particles.GetCurrentAnimatorStateInfo(0).length;
+            yield return new WaitForSeconds(duration);
+            
+            skillDic["MageBasicSkill"].SetActive(false);
         }
     }
 }
