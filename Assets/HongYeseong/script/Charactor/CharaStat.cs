@@ -9,6 +9,7 @@ public class CharaStat : MonoBehaviour
     public Vector3 moveVector {get; private set;}
     private Rigidbody CharctorRb;
     float moveSpeed;
+    AnimManager animManager;
     public enum status // 캐릭터 현재 상태
     {
         Default,
@@ -22,18 +23,21 @@ public class CharaStat : MonoBehaviour
     { 
         CharctorRb = GetComponent<Rigidbody>();
         moveSpeed = characterStats.speed;
+        animManager = GetComponent<AnimManager>();
         Debug.Log(moveSpeed);
         Debug.Log(CharctorRb);
+        Debug.Log(animManager);
     }
     void FixedUpdate() 
     {
         CharctorRb.linearVelocity = moveVector.normalized * moveSpeed;    
     }
 
-    public void OnMove(InputValue value)
-    { 
-        inputVector = value.Get<Vector2>();
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        inputVector = context.ReadValue<Vector2>();
         moveVector = new Vector3(inputVector.x, 0f, inputVector.y);
+        animManager.MoveAnim(inputVector);
         Debug.Log(moveVector);
     }
 }
