@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7027ed3-364a-42f4-9d25-e98c032ece80" name="변경" comment="" />
+    <list default="true" id="034a1399-77f4-4723-a50c-688eba1e060b" name="변경" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,9 +26,9 @@
   }
 }]]></component>
   <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
+  "associatedIndex": 0
 }]]></component>
-  <component name="ProjectId" id="3C45cqIr5RlzKzAGanc8DOCGwys" />
+  <component name="ProjectId" id="3C45ckEm2S0QNgiS6HlQARIlvyh" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -93,12 +93,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="디폴트 작업">
-      <changelist id="b7027ed3-364a-42f4-9d25-e98c032ece80" name="변경" comment="" />
-      <created>1775632083945</created>
+      <changelist id="034a1399-77f4-4723-a50c-688eba1e060b" name="변경" comment="" />
+      <created>1775632083952</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1775632083945</updated>
-      <workItem from="1775632086233" duration="1844000" />
+      <updated>1775632083952</updated>
+      <workItem from="1775632085643" duration="5502000" />
     </task>
     <servers />
   </component>
