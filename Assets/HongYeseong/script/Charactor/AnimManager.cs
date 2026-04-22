@@ -9,9 +9,6 @@ public class AnimManager : MonoBehaviour
     [Header("Anim List")]
     public List<string> AnimatorState = new List<string>();
     
-    [Header("MoveAnim List")]
-    public List<string> MoveAnimatorState = new List<string>();
-    
     [Header("Key List")]
     public List<string> KeyList = new List<string>();
     
@@ -20,6 +17,7 @@ public class AnimManager : MonoBehaviour
     
     Animator animator;
 
+    private bool isRightAttack;
     void Awake()
     {
         animator = GetComponent<Animator>();
@@ -35,6 +33,8 @@ public class AnimManager : MonoBehaviour
             if (context.control.name == KeyList[i] && animator.GetCurrentAnimatorStateInfo(1).normalizedTime >= 1.0f)        
             {
                 
+                
+                    
                 Anim(i);
                 Skill(i);
                 break;
@@ -44,35 +44,23 @@ public class AnimManager : MonoBehaviour
 
     public void Anim(int i)
     {
+        if (KeyList[i] == "leftButton" && isRightAttack)
+        {
+            animator.Play(AnimatorState[3], 1, 0f);
+            isRightAttack = false;
+            return;
+        }
+        else if (KeyList[i] == "leftButton" && !isRightAttack)
+        {
+            animator.Play(AnimatorState[i], 1, 0f);
+            isRightAttack = true;
+            return;
+        }
             animator.Play(AnimatorState[i], 1, 0f);
     }
     public void Skill(int key)
     {
         GameObject skill = Instantiate(SkillList[key], transform.position, Quaternion.identity);    
         skill.SetActive(true);
-    }
-
-    public void MoveAnim(Vector2 inputVector)
-    {
-        if (inputVector.x > 0 && inputVector.y >= 0)
-        {
-            animator.Play(MoveAnimatorState[0], 0, 0f); // 오른쪽 이동
-        }
-        else if (inputVector.x < 0 && inputVector.y >= 0)
-        {
-            animator.Play(MoveAnimatorState[1], 0, 0f);// 왼쪽 이동
-        }
-        else if (inputVector.x == 0 && inputVector.y > 0)
-        {
-            animator.Play(MoveAnimatorState[2], 0, 0f);// 앞 이동
-        }
-        else if (inputVector.x == 0 && inputVector.y < 0)
-        {
-            animator.Play(MoveAnimatorState[3], 0, 0f);// 뒤 이동
-        }
-        else
-        {
-            animator.Play(MoveAnimatorState[4], 0, 0f);// idle
-        }
     }
 }
