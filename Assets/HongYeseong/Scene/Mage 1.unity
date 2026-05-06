@@ -944,11 +944,16 @@ MonoBehaviour:
   - 1Hand_Up_Attack_A_3_InPlace
   - HumanM@MagicAttackCall1H01_L
   - 1Hand_Up_Shield_Block_Idle_1
+  - 1Hand_Up_Shield_Block_Idle_1 0
+  - Sword And Shield Casting (2) 0
   KeyList:
   - leftButton
   - q
   - f
+  - r
+  - e
   SkillList:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
