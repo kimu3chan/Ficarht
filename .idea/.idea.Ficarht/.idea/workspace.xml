@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="034a1399-77f4-4723-a50c-688eba1e060b" name="변경" comment="" />
+    <list default="true" id="034a1399-77f4-4723-a50c-688eba1e060b" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Ficarht/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ficarht/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Kimsechan/CardMap_MainDesplay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Kimsechan/CardMap_MainDesplay.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MasterStylizedProjectiles/Projectiles/BlueShoot/Materials/Mat_OrangeShoot_Circle 3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MasterStylizedProjectiles/Projectiles/BlueShoot/Materials/Mat_OrangeShoot_Circle 3.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiny Giant Studio/Modular 3D Text/Materials/MText_Blue.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tiny Giant Studio/Modular 3D Text/Materials/MText_Blue.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiny Giant Studio/Modular 3D Text/Materials/MText_Green.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tiny Giant Studio/Modular 3D Text/Materials/MText_Green.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiny Giant Studio/Modular 3D Text/Materials/MText_Grey.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tiny Giant Studio/Modular 3D Text/Materials/MText_Grey.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiny Giant Studio/Modular 3D Text/Materials/MText_Red.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tiny Giant Studio/Modular 3D Text/Materials/MText_Red.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiny Giant Studio/Modular 3D Text/Materials/MText_White Dark.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tiny Giant Studio/Modular 3D Text/Materials/MText_White Dark.mat" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,39 +22,39 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "kimu3chan"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;kimu3chan&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/kimu3chan/Ficarht.git",
-    "accountId": "700dc884-3c22-4fde-88a0-bab7984052bf"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/kimu3chan/Ficarht.git&quot;,
+    &quot;accountId&quot;: &quot;700dc884-3c22-4fde-88a0-bab7984052bf&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="3C45ckEm2S0QNgiS6HlQARIlvyh" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Unity 에디터에 연결.Unity 에디터에 연결">
     <configuration name="유닛 테스트(배치 모드)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/6000.3.2f1/Unity.app/Contents/MacOS/Unity" />
@@ -99,6 +108,8 @@
       <option name="presentableId" value="Default" />
       <updated>1775632083952</updated>
       <workItem from="1775632085643" duration="5502000" />
+      <workItem from="1776845697215" duration="5204000" />
+      <workItem from="1778049939748" duration="4049000" />
     </task>
     <servers />
   </component>
