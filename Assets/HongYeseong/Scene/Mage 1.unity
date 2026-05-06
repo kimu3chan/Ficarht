@@ -882,7 +882,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharaStat
   characterStats: {fileID: 11400000, guid: c4008544974384f79ae9ead47de902cd, type: 2}
-  walkSpeed: 0
+  walkSpeed: 5
 --- !u!4 &1342266388 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3214707271356415487, guid: 27414671a9b964c71810ca2759b0a5ab, type: 3}
