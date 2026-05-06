@@ -116,6 +116,17 @@
                 },
                 {
                     "name": "",
+                    "id": "790550d1-af27-4f3d-984e-b7cfc37a123f",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Key",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "e4121963-3ec3-49ad-bee9-79764eef2e4e",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",

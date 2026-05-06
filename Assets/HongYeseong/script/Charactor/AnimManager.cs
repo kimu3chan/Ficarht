@@ -18,6 +18,17 @@ public class AnimManager : MonoBehaviour
     Animator animator;
 
     private bool isRightAttack;
+    
+    [SerializeField]
+    CharactorType charactorType;
+    public enum CharactorType
+    {
+        Mage,
+        Paladin,
+        Berserker,
+        Bard
+    }
+
     void Awake()
     {
         animator = GetComponent<Animator>();
@@ -44,13 +55,13 @@ public class AnimManager : MonoBehaviour
 
     public void Anim(int i)
     {
-        if (KeyList[i] == "leftButton" && isRightAttack)
+        if (KeyList[i] == "leftButton" && isRightAttack && charactorType == CharactorType.Mage)
         {
             animator.Play(AnimatorState[3], 1, 0f);
             isRightAttack = false;
             return;
         }
-        else if (KeyList[i] == "leftButton" && !isRightAttack)
+        if (KeyList[i] == "leftButton")
         {
             animator.Play(AnimatorState[i], 1, 0f);
             isRightAttack = true;
@@ -60,6 +71,8 @@ public class AnimManager : MonoBehaviour
     }
     public void Skill(int key)
     {
+        if (SkillList[key] == null)
+            return;
         GameObject skill = Instantiate(SkillList[key], transform.position, Quaternion.identity);    
         skill.SetActive(true);
     }
