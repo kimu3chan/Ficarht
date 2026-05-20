@@ -5,10 +5,9 @@ using UnityEngine.InputSystem;
 public class CharaStat : MonoBehaviour
 {
     public CharacterStats characterStats; //캐릭터 스탯
-    Vector2 inputVector;
-    Vector3 moveVector;
-    Rigidbody CharctorRb;
-    float moveSpeed;
+    private Rigidbody CharctorRb;
+    public float walkSpeed;
+    AnimManager animManager;
     public enum status // 캐릭터 현재 상태
     {
         Default,
@@ -21,18 +20,8 @@ public class CharaStat : MonoBehaviour
     void Awake()
     { 
         CharctorRb = GetComponent<Rigidbody>();
-        moveSpeed = characterStats.speed;
-        Debug.Log(moveSpeed);
-        Debug.Log(CharctorRb);
-    }
-    void Update() 
-    {
-        CharctorRb.linearVelocity = moveVector.normalized * moveSpeed;    
-    }
-
-    public void OnMove(InputValue value)
-    { 
-        inputVector = value.Get<Vector2>();
-        moveVector = new Vector3(inputVector.x, 0f, inputVector.y);
+        walkSpeed = characterStats.speed;
+        animManager = GetComponent<AnimManager>();
     }
 }
+
