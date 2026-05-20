@@ -67,7 +67,7 @@ public class AnimManager : MonoBehaviour
     {
         if (SkillList[key] == null)
             return;
-        GameObject skill = Instantiate(SkillList[key], transform.position, Quaternion.identity);    
+        GameObject skill = Instantiate(SkillList[key], transform.position + SkillList[key].transform.localPosition, Quaternion.identity);    
         skill.SetActive(true);
     }
 }
