@@ -20981,16 +20981,15 @@ MonoBehaviour:
   - MageDefaltAttackLeft
   - MageBigAttack
   - MageStrongAttack
-  - MageDefaltAttackRight
   KeyList:
   - leftButton
   - q
   - e
   SkillList:
   - {fileID: 992358591}
-  - {fileID: 992358591}
-  - {fileID: 1425628859}
   - {fileID: 1379978537}
+  - {fileID: 1425628859}
+  charactorType: 0
 --- !u!114 &1440378214
 MonoBehaviour:
   m_ObjectHideFlags: 0
