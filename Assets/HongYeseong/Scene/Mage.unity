@@ -15319,7 +15319,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &789330590
 Transform:
   m_ObjectHideFlags: 0
@@ -20257,7 +20257,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &992358592
 Transform:
   m_ObjectHideFlags: 0
@@ -20660,7 +20660,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1408041389}
   - component: {fileID: 1408041391}
-  - component: {fileID: 1408041390}
   m_Layer: 0
   m_Name: Trail (2)
   m_TagString: Untagged
@@ -20683,19 +20682,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1635450252}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1408041390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1408041388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 437589d6c2561478198c7ca4c21ed807, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Trail
-  trailRenderer: {fileID: 0}
 --- !u!96 &1408041391
 TrailRenderer:
   serializedVersion: 4
@@ -20746,7 +20732,7 @@ TrailRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Time: 0.25
-  m_PreviewTimeScale: 1
+  m_PreviewTimeScale: 0
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -21168,7 +21154,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1776260483
 Transform:
   m_ObjectHideFlags: 0
