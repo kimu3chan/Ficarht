@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     Vector2 inputVector;
 
     CharaStat characterStats;
+
+    private bool isRun;
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -34,7 +36,6 @@ public class PlayerController : MonoBehaviour
     {
         if (isAttacking) return;
         
-        bool isRun = Input.GetKey(KeyCode.LeftShift);
         currentSpeed = moveInput.magnitude > 0 ? (isRun ? runSpeed : walkSpeed) : 0;
 
         animator.SetFloat("MoveX", moveInput.x);
@@ -70,5 +71,13 @@ public class PlayerController : MonoBehaviour
     {
         inputVector = context.ReadValue<Vector2>();
         moveInput = new Vector3(inputVector.x, 0f, inputVector.y).normalized;
+    }
+    
+    public void OnKey(InputAction.CallbackContext context)
+    {
+        if (!context.started)
+            return;
+    
+        isRun = Input.GetKey(KeyCode.LeftShift);
     }
 }

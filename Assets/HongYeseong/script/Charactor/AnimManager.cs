@@ -55,12 +55,6 @@ public class AnimManager : MonoBehaviour
 
     public void Anim(int i)
     {
-        if (KeyList[i] == "leftButton" && isRightAttack && charactorType == CharactorType.Mage)
-        {
-            animator.Play(AnimatorState[3], 1, 0f);
-            isRightAttack = false;
-            return;
-        }
         if (KeyList[i] == "leftButton")
         {
             animator.Play(AnimatorState[i], 1, 0f);
