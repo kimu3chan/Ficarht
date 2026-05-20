@@ -20614,6 +20614,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2230640250319075831, guid: e68595dd7dde54b91bd73c723fe1ec38, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1440378215}
+    - targetCorrespondingSourceObject: {fileID: 2230640250319075831, guid: e68595dd7dde54b91bd73c723fe1ec38, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1440378220}
   m_SourcePrefab: {fileID: 100100000, guid: e68595dd7dde54b91bd73c723fe1ec38, type: 3}
 --- !u!1 &1379978537
 GameObject:
@@ -20692,6 +20695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 437589d6c2561478198c7ca4c21ed807, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trail
+  trailRenderer: {fileID: 0}
 --- !u!96 &1408041391
 TrailRenderer:
   serializedVersion: 4
@@ -21066,6 +21070,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   walkSpeed: 3
   runSpeed: 6
+--- !u!114 &1440378220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440378189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6431646673aab403cbbad467eafdacb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharaStat
+  characterStats: {fileID: 11400000, guid: 13e37a201980c4462893b96b7b323424, type: 2}
+  walkSpeed: 0
 --- !u!4 &1518883607 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3370099500693623968, guid: eccbc655050af0b4f81d8db39f84a58e, type: 3}
