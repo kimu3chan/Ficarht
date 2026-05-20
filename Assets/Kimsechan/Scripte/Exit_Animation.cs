@@ -14,7 +14,7 @@ public class Exit_Animation : MonoBehaviour
 
     public void OnEnable()
     {
-        transform.localScale = Vector3.one * 0.001f;
+        transform.localScale = Vector3.one * 0.03100843f;
         PlayEnterAnimation();
     }
 
@@ -26,9 +26,6 @@ public class Exit_Animation : MonoBehaviour
 
         seq.Append(transform.DOScaleZ(targetScale.z, timeZ)
                 .SetEase(Ease.InCubic))
-
-            .AppendInterval(interval)
-
             .Append(transform.DOScaleX(targetScale.x, timeX)
                 .SetEase(Ease.OutCubic));
     }
@@ -41,9 +38,6 @@ public class Exit_Animation : MonoBehaviour
 
         seq.Append(transform.DOScaleX(0.001f, timeX)
                 .SetEase(Ease.InCubic))
-
-            .AppendInterval(interval)
-
             .Append(transform.DOScaleZ(0.001f, timeZ)
                 .SetEase(Ease.OutCubic));
 
