@@ -10,6 +10,6 @@ AssetOrigin:
   productId: 326043
   packageName: Human Spellcasting Animations FREE
   packageVersion: 1.0
-  assetPath: Assets/CharAnimAsset/Mage/Human Spellcasting Animations - Unity Demo
-    Scene.unity
+  assetPath: Assets/HongYeseong/CharAnimAsset/Mage/Human Spellcasting Animations
+    - Unity Demo Scene.unity
   uploadId: 825286
