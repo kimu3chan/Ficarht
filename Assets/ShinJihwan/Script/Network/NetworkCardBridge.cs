@@ -208,6 +208,7 @@ public class NetworkCardBridge : NetworkBehaviour
         PlayerNetwork playerNetwork = GetComponent<PlayerNetwork>();
         if (playerNetwork != null)
         {
+            playerNetwork.hasCardStats = true;   // 카드 스탯 수신 완료 표시
             playerNetwork.ApplyStats(health, stamina, power, defense, intelligence);
             playerNetwork.selectedCharacterId = characterId;
             playerNetwork.selectedMapScene = mapScene;

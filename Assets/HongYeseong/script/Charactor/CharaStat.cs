@@ -139,10 +139,22 @@ public class CharaStat : MonoBehaviour
         cooldown = characterStats.cooldown;
         duration = characterStats.duration;
 
+        // healthBar가 Inspector에 연결되지 않은 경우 자식에서 자동 탐색
+        if (healthBar == null)
+            healthBar = GetComponentInChildren<UnityEngine.UI.Slider>(true);
+
         if (healthBar != null)
         {
             healthBar.maxValue = characterStats.health;
             healthBar.value = health;
+        }
+
+        // staminaBar 자동 탐색: healthBar와 같은 오브젝트에 두 번째 Slider가 있을 경우 대비
+        if (staminaBar == null)
+        {
+            var sliders = GetComponentsInChildren<UnityEngine.UI.Slider>(true);
+            if (sliders.Length >= 2 && sliders[1] != healthBar)
+                staminaBar = sliders[1];
         }
 
         if (staminaBar != null)
@@ -151,7 +163,7 @@ public class CharaStat : MonoBehaviour
             staminaBar.value = stamina;
         }
 
-        Debug.Log($"[CharaStat] {name} 스탯 초기화 완료: HP={health}, speed={speed}, runSpeed={runSpeed}");
+        Debug.Log($"[CharaStat] {name} 스탯 초기화 완료: HP={health}, speed={speed}, runSpeed={runSpeed}, healthBar={(healthBar != null ? "OK" : "NULL")}");
     }
     
     private void OnEnable()

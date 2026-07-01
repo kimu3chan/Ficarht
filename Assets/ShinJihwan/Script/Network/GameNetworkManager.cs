@@ -299,6 +299,21 @@ public class GameNetworkManager : NetworkManager
             if (characterNet != null && playerNet != null && characterNet != playerNet)
                 characterNet.CopyBattleSetupFrom(playerNet);
 
+            // 카드 스탯이 선택되지 않은 경우: ScriptableObject 기반 스탯 (CharaStat)을
+            // PlayerNetwork health에 반영. hasCardStats = false이면 lobby PlayerNetwork의
+            // 기본값(100/50)이 CharaStat ScriptableObject 값(25/50 등)을 덮어씌우는 것을 방지.
+            if (charaStat != null && characterNet != null && playerNet != null && !playerNet.hasCardStats)
+            {
+                characterNet.ApplyStats(
+                    charaStat.maxHealth,
+                    charaStat.maxStamina,
+                    charaStat.power,
+                    charaStat.defense,
+                    charaStat.intelligence
+                );
+                Debug.Log($"[Server] {character.name} SO 스탯 우선 적용: HP={charaStat.maxHealth}, PWR={charaStat.power}, INT={charaStat.intelligence}");
+            }
+
             if (controller != null)
                 controller.ServerSetOwnerPlayerNetwork(playerNet);
 

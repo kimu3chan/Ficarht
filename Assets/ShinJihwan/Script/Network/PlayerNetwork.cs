@@ -23,6 +23,12 @@ public class PlayerNetwork : NetworkBehaviour
 
     [SyncVar] public bool isDead = false;
 
+    /// <summary>
+    /// 카드 선택 단계에서 CmdSubmitStats가 호출되면 true.
+    /// false이면 ScriptableObject 기반 스탯(CharaStat.InitializeStats)을 우선함.
+    /// </summary>
+    [SyncVar] public bool hasCardStats = false;
+
     // ─────────────────────────────────────────────
     // 등록된 스킬 (서버에서만 관리)
     // ─────────────────────────────────────────────
@@ -187,6 +193,10 @@ public class PlayerNetwork : NetworkBehaviour
         charaStat.defense = Mathf.Max(def, 0f);
         charaStat.intelligence = Mathf.Max(intel, 0f);
 
+        // healthBar Inspector 미연결 시 자동 탐색
+        if (charaStat.healthBar == null)
+            charaStat.healthBar = charaStat.GetComponentInChildren<UnityEngine.UI.Slider>(true);
+
         if (charaStat.healthBar != null)
         {
             charaStat.healthBar.maxValue = charaStat.maxHealth;
@@ -222,9 +232,9 @@ public class PlayerNetwork : NetworkBehaviour
         charaStat.maxHealth = Mathf.Max(maxHealth, 1f);
         charaStat.health = Mathf.Clamp(value, 0f, charaStat.maxHealth);
 
-        // healthBar가 Inspector에 연결 안 된 경우 자식에서 자동 탐색
+        // healthBar가 Inspector에 연결 안 된 경우 자식에서 자동 탐색 (비활성 포함)
         if (charaStat.healthBar == null)
-            charaStat.healthBar = charaStat.GetComponentInChildren<UnityEngine.UI.Slider>();
+            charaStat.healthBar = charaStat.GetComponentInChildren<UnityEngine.UI.Slider>(true);
 
         if (charaStat.healthBar != null)
         {
