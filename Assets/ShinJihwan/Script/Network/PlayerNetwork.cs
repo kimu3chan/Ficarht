@@ -529,9 +529,14 @@ public class PlayerNetwork : NetworkBehaviour
         currentState = PlayerStateType.Normal;
         Debug.Log($"[Server] {netId} 사망");
 
-        // GameNetworkManager에 사망 알림
+        // ReplacePlayerForConnection 이후 로비 PN의 connectionToClient는 null.
+        // currentCharacter(전투 캐릭터)의 연결을 통해 패배자 커넥션을 복구한다.
+        NetworkConnectionToClient loserConn = connectionToClient;
+        if (loserConn == null && currentCharacter != null)
+            loserConn = currentCharacter.GetComponent<NetworkBehaviour>()?.connectionToClient;
+
         GameNetworkManager netManager = NetworkManager.singleton as GameNetworkManager;
-        netManager?.OnPlayerDied(connectionToClient);
+        netManager?.OnPlayerDied(loserConn);
 
         RpcOnDied();
     }
@@ -554,7 +559,19 @@ public class PlayerNetwork : NetworkBehaviour
     void RpcOnDied()
     {
         Debug.Log("[Client] 플레이어 사망 처리");
-        // TODO: 사망 애니메이션
+        // 전투 캐릭터의 사망 애니메이션 + 입력 비활성화
+        CharaStat charaStat = GetCharaStatTarget();
+        charaStat?.Die();
+    }
+
+    /// <summary>
+    /// 서버 → 해당 클라이언트에만 게임 결과(승리/패배) UI를 표시한다.
+    /// </summary>
+    [TargetRpc]
+    public void TargetShowResult(NetworkConnection conn, bool isWinner)
+    {
+        Debug.Log($"[Client] 게임 결과: {(isWinner ? "승리" : "패배")}");
+        GameResultUIController.Instance?.ShowResult(isWinner);
     }
 
     // ─────────────────────────────────────────────

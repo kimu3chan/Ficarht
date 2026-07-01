@@ -401,19 +401,30 @@ public class GameNetworkManager : NetworkManager
     [Server]
     public void OnPlayerDied(NetworkConnectionToClient loserConn)
     {
-        Debug.Log($"[Server] 패배자 결정: {loserConn.connectionId}");
+        if (loserConn == null)
+        {
+            Debug.LogError("[Server] OnPlayerDied: loserConn이 null — 연결을 찾지 못함");
+            return;
+        }
+        Debug.Log($"[Server] 패배자 결정: conn {loserConn.connectionId}");
 
-        // 승자 찾기 (사망하지 않은 플레이어)
+        // 사망 애니메이션 재생 시간 후 결과 UI 표시
+        StartCoroutine(ShowResultAfterDelay(loserConn, 2.5f));
+    }
+
+    private System.Collections.IEnumerator ShowResultAfterDelay(NetworkConnectionToClient loserConn, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
         foreach (var conn in NetworkServer.connections.Values)
         {
-            if (conn == loserConn) continue;
+            // conn.identity는 ReplacePlayerForConnection 이후 전투 캐릭터
+            PlayerNetwork pn = conn.identity?.GetComponent<PlayerNetwork>();
+            if (pn == null) continue;
 
-            PlayerNetwork winner = conn.identity?.GetComponent<PlayerNetwork>();
-            if (winner != null && !winner.isDead)
-            {
-                Debug.Log($"[Server] 승자: {conn.connectionId}");
-                // TODO: 결과 UI 표시 RPC 추가
-            }
+            bool isWinner = (conn != loserConn);
+            Debug.Log($"[Server] conn {conn.connectionId} → {(isWinner ? "승리" : "패배")} UI 전송");
+            pn.TargetShowResult(conn, isWinner);
         }
     }
 

@@ -560,7 +560,7 @@ public class CharaStat : MonoBehaviour
     public void Die()
     {
         animator.SetTrigger("Die");
-        playerInput.enabled = false;
+        if (playerInput != null) playerInput.enabled = false;
     }
 
     /// <summary>
